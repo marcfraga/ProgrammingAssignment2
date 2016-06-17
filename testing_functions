@@ -1,0 +1,51 @@
+## This file provides some sample variables to test the assignment functions.
+
+## Variable 'a' is a simple matrix:
+
+a <- makeCacheMatrix(matrix(1:4, 2, 2))
+
+## The resulting matrix can be called (in my function) as below:
+
+a$get()
+
+## and the result should be:
+##   [,1] [,2]
+##[1,]    1    3
+##[2,]    2    4
+
+## Then, to test the cacheSolve function, type:
+
+cacheSolve(a)
+
+## the result should be:
+
+##     [,1] [,2]
+##[1,]   -2  1.5
+##[2,]    1 -0.5
+
+## Below are two other examples of matrices and the expected results:
+
+b <- makeCacheMatrix(matrix(c(1,3,6,7,9.6,11,8,5,0.5), c(3,3)))
+
+cacheSolve(b)
+
+##           [,1]       [,2]  [,3]
+##[1,]  1.0568421 -1.7789474  0.88
+##[2,] -0.6000000  1.0000000 -0.40
+##[3,]  0.5178947 -0.6526316  0.24
+
+c <- makeCacheMatrix(matrix(rnorm(1:9), c(3,3)))
+
+c$get() ##  to see the actual matrix generated:
+
+##            [,1]      [,2]       [,3]
+##[1,] -0.60922573 0.8596492  1.6325225
+##[2,] -0.32096463 1.2151895  2.2790147
+##[3,] -0.04590655 0.1230167 -0.2981176
+
+ cacheSolve(c)
+##            [,1]      [,2]       [,3]
+##[1,] -2.61312240 1.8587305 -0.1003197
+##[2,] -0.81451155 1.0432723  3.5151381
+##[3,]  0.06628565 0.1442787 -1.8884292
+
